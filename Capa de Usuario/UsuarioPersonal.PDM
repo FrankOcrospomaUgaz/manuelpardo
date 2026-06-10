@@ -1,0 +1,136 @@
+[Root]
+Most Recent Package=Standard Setup Package 1
+
+[Package|Standard Setup Package 1|UsuarioPersonal]
+Icon1=UsuarioPersonal.exe
+Title1=UsuarioPersonal
+StartIn1=$(AppPath)
+Key1=Icon1
+
+
+[Package|Standard Setup Package 1|Root]
+SubWizProgID=PDWizard.SetupPkgSubWiz
+BuildFolder=e:\Personal\Instalador
+
+[Package|Standard Setup Package 1|Configure DAO ISAMs]
+Applicable=No
+
+[Package|Standard Setup Package 1|Configure DAO ODBC]
+JetWorkspace=
+ODBCDirect=
+
+[Package|Standard Setup Package 1|Files Found]
+
+[Package|Standard Setup Package 1|Files Released]
+
+[Package|Standard Setup Package 1|Missing Dependency Information]
+C:\Archivos de programa\Archivos comunes\System\ado\msado20.tlb=
+C:\WINNT\system32\MSSTDFMT.DLL=
+C:\WINNT\system32\MSBIND.DLL=
+
+[Package|Standard Setup Package 1|Out-of-Date Dependency Information]
+C:\WINNT\system32\tabctl32.ocx=
+C:\WINNT\system32\MSCOMCTL.OCX=
+C:\WINNT\system32\Comdlg32.ocx=
+C:\WINNT\system32\MSCOMCT2.OCX=
+C:\WINNT\system32\COMCT332.OCX=
+
+[Package|Standard Setup Package 1|Files Added]
+
+[Package|Standard Setup Package 1|Files Removed]
+
+[Package|Standard Setup Package 1|Files In Project]
+C:\WINNT\system32\MSVBVM60.DLL=Yes
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\COMCAT.DLL=Yes
+C:\WINNT\system32\MSBIND.DLL=Yes
+C:\WINNT\system32\MSSTDFMT.DLL=Yes
+C:\WINNT\system32\MSDATGRD.OCX=Yes
+C:\WINNT\system32\MSDATLST.OCX=Yes
+C:\WINNT\system32\MSCOMCTL.OCX=Yes
+C:\WINNT\system32\COMCT232.OCX=Yes
+C:\WINNT\system32\COMCT332.OCX=Yes
+C:\WINNT\system32\tabctl32.ocx=Yes
+C:\WINNT\system32\MSCOMCT2.OCX=Yes
+C:\WINNT\system32\Comdlg32.ocx=Yes
+C:\WINNT\system32\todg7.ocx=Yes
+C:\WINNT\system32\todgub7.dll=Yes
+C:\WINNT\system32\tdbgpp7.dll=Yes
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP.EXE=Yes
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP1.EXE=Yes
+C:\WINNT\system32\VB6STKIT.DLL=Yes
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\ST6UNST.EXE=Yes
+E:\Personal\Capa de Usuario\Personal.exe=Yes
+C:\WINNT\system32\oleaut32.dll=Yes
+C:\WINNT\system32\olepro32.dll=Yes
+C:\WINNT\system32\asycfilt.dll=Yes
+C:\WINNT\system32\stdole2.tlb=Yes
+C:\Archivos de programa\Archivos comunes\System\ado\msado20.tlb=Yes
+
+[Package|Standard Setup Package 1|Configure Registry Files]
+Applicable=No
+
+[Package|Standard Setup Package 1|Configure Remote Servers]
+Applicable=No
+
+[Package|Standard Setup Package 1|Install Locations]
+C:\Personal\Codificacion\Capa de Usuario\UsuarioPersonal.exe=$(AppPath)
+C:\WINNT\system32\MSVBVM60.DLL=$(WinSysPathSysFile)
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\OLEAUT32.DLL=$(WinSysPathSysFile)
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\OLEPRO32.DLL=$(WinSysPathSysFile)
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\ASYCFILT.DLL=$(WinSysPathSysFile)
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\STDOLE2.TLB=$(WinSysPathSysFile)
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\COMCAT.DLL=$(WinSysPathSysFile)
+C:\WINNT\system32\MSBIND.DLL=$(WinSysPath)
+C:\WINNT\system32\MSSTDFMT.DLL=$(WinSysPath)
+C:\WINNT\system32\MSDATGRD.OCX=$(WinSysPath)
+C:\WINNT\system32\MSDATLST.OCX=$(WinSysPath)
+C:\WINNT\system32\MSCOMCTL.OCX=$(WinSysPath)
+C:\WINNT\system32\COMCT232.OCX=$(WinSysPath)
+C:\WINNT\system32\COMCT332.OCX=$(WinSysPath)
+C:\WINNT\system32\tabctl32.ocx=$(WinSysPath)
+C:\WINNT\system32\MSCOMCT2.OCX=$(WinSysPath)
+C:\WINNT\system32\Comdlg32.ocx=$(WinSysPath)
+C:\WINNT\system32\todg7.ocx=$(WinSysPath)
+C:\WINNT\system32\todgub7.dll=$(WinSysPath)
+C:\WINNT\system32\tdbgpp7.dll=$(WinSysPath)
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP.EXE=$(AppPath)
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP1.EXE=$(WinPath)
+C:\WINNT\system32\VB6STKIT.DLL=$(WinSysPathSysFile)
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\ST6UNST.EXE=$(WinPath)
+E:\Personal\Capa de Usuario\Personal.exe=$(AppPath)
+C:\WINNT\system32\oleaut32.dll=$(WinSysPathSysFile)
+C:\WINNT\system32\olepro32.dll=$(WinSysPathSysFile)
+C:\WINNT\system32\asycfilt.dll=$(WinSysPathSysFile)
+C:\WINNT\system32\stdole2.tlb=$(WinSysPathSysFile)
+C:\Archivos de programa\Archivos comunes\System\ado\msado20.tlb=$(WinSysPath)
+
+[Package|Standard Setup Package 1|Configure Shared Files]
+Applicable=Yes
+C:\Personal\Codificacion\Capa de Usuario\UsuarioPersonal.exe=No
+E:\Personal\Capa de Usuario\Personal.exe=No
+
+[Package|Standard Setup Package 1|Distribution]
+Type=single
+Size=
+Title=Personal - COMPUSOFT
+
+[Package|Standard Setup Package 1|IconGroups]
+Group0=Personal
+PrivateGroup0=False
+Parent0=$(Programs)
+
+[Package|Standard Setup Package 1|Personal]
+Icon1=Personal.exe
+Title1=Personal
+StartIn1=$(AppPath)
+Key1=Icon1
+
+[Package|Standard Setup Package 1|Package]
+PackageFolder=e:\Personal\Instalador
+ProjectFolder=E:\Personal\Capa de Usuario
+ServerSideCab=
+File1=e:\Personal\Instalador\setup.exe
+File2=e:\Personal\Instalador\Setup.Lst
+File3=e:\Personal\Instalador\Personal.CAB
+Handler1=PDWizard.FolderDplySubWiz
+Handler2=PDWizard.WebPostDplySubWiz

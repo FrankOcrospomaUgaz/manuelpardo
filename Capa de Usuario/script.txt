@@ -1,0 +1,10 @@
+alter table Trabajador add Horario varchar(500)
+
+ALTER PROCEDURE up_ModificarTrabajadorxCompromiso
+@IdTrabajador int,
+@Compromiso char(1),
+@horario varchar(500)=''
+AS
+UPDATE Trabajador SET CompromisoGenerado = @Compromiso, horario = CASE WHEN @horario = '' THEN horario ELSE @horario END WHERE IdTrabajador = @IdTrabajador
+GO
+

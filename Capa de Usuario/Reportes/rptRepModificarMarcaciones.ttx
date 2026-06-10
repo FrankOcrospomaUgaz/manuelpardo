@@ -1,0 +1,9 @@
+IdMarcacion	Number		
+IdTrabajador	Long		
+Apellido	String	60	
+Nombre	String	60	
+Fecha	Date		
+HoraIngresoIdeal	Date		
+HoraSalidaIdeal	Date		
+HoraIngresoReal	Date		
+HoraSalidaReal	Date		

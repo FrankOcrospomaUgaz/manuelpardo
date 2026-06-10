@@ -1,0 +1,4 @@
+IdTrabajador	Long		
+Nombres	String	100	
+Grupo	String	50
+IdGrupo	Long

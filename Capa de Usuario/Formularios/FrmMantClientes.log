@@ -1,0 +1,5 @@
+Línea 50: la clase MSComCtl2.DTPicker del control DtpHoraIngresoReal no era una clase de control cargada.
+Línea 73: la clase ComCtl2.UpDown del control updToleranciaPrimeraMarcacion no era una clase de control cargada.
+Línea 181: la clase ComCtl2.UpDown del control updTardanza no era una clase de control cargada.
+Línea 218: la clase ComCtl2.UpDown del control updJorIncompleta no era una clase de control cargada.
+Línea 327: la clase MSComCtl2.UpDown del control updTolerancia no era una clase de control cargada.

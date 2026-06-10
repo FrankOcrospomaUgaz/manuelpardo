@@ -1,0 +1,5 @@
+IdTrabajador	Long
+Nombres	String	60
+Descripcion	String	30
+IdMotivoJustificacion	Long
+Incidencia	Long

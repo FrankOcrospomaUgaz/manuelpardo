@@ -1,0 +1,1089 @@
+VERSION 5.00
+Object = "{F0D2F211-CCB0-11D0-A316-00AA00688B10}#1.0#0"; "MSDATLST.OCX"
+Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCT2.OCX"
+Object = "{DEF7CADD-83C0-11D0-A0F1-00A024703500}#7.0#0"; "todg7.ocx"
+Begin VB.Form FrmMantJustificacion 
+   BorderStyle     =   1  'Fixed Single
+   ClientHeight    =   8160
+   ClientLeft      =   45
+   ClientTop       =   330
+   ClientWidth     =   7020
+   Icon            =   "FrmMantJustificacion.frx":0000
+   LinkTopic       =   "Form1"
+   MaxButton       =   0   'False
+   MDIChild        =   -1  'True
+   MinButton       =   0   'False
+   ScaleHeight     =   8160
+   ScaleWidth      =   7020
+   Begin VB.Frame FraAcciones 
+      Caption         =   "Acciones"
+      BeginProperty Font 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   810
+      Left            =   90
+      TabIndex        =   30
+      Top             =   7215
+      Width           =   6795
+      Begin VB.CommandButton CmdCancelar 
+         Height          =   510
+         Left            =   3480
+         Picture         =   "FrmMantJustificacion.frx":08CA
+         Style           =   1  'Graphical
+         TabIndex        =   19
+         ToolTipText     =   "Cancelar la operación"
+         Top             =   210
+         Width           =   810
+      End
+      Begin VB.CommandButton CmdAceptar 
+         Height          =   510
+         Left            =   2565
+         Picture         =   "FrmMantJustificacion.frx":0BD4
+         Style           =   1  'Graphical
+         TabIndex        =   18
+         ToolTipText     =   "Confirmar operación"
+         Top             =   210
+         Width           =   810
+      End
+   End
+   Begin VB.Frame FraDatos 
+      Caption         =   "Datos de Justificación"
+      BeginProperty Font 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   2430
+      Left            =   90
+      TabIndex        =   25
+      Top             =   4770
+      Width           =   6780
+      Begin VB.OptionButton OptRemunerada 
+         Caption         =   "Remunerada"
+         BeginProperty Font 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   270
+         Left            =   1552
+         TabIndex        =   12
+         Top             =   210
+         Width           =   1395
+      End
+      Begin VB.OptionButton OptNoRemunerada 
+         Caption         =   "No Remunerada"
+         BeginProperty Font 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   315
+         Left            =   3562
+         TabIndex        =   13
+         Top             =   210
+         Width           =   1740
+      End
+      Begin VB.TextBox TxtObservacion 
+         BeginProperty Font 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   660
+         Left            =   1230
+         MaxLength       =   200
+         MultiLine       =   -1  'True
+         TabIndex        =   17
+         Text            =   "FrmMantJustificacion.frx":1C16
+         Top             =   1680
+         Width           =   5370
+      End
+      Begin VB.TextBox TxtIdJustificacion 
+         BeginProperty Font 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   285
+         Left            =   1230
+         TabIndex        =   14
+         Tag             =   "-1"
+         Top             =   540
+         Width           =   1560
+      End
+      Begin MSDataListLib.DataCombo DtcMotivoJustificacion 
+         Height          =   315
+         Left            =   1230
+         TabIndex        =   15
+         Top             =   915
+         Width           =   3960
+         _ExtentX        =   6985
+         _ExtentY        =   556
+         _Version        =   393216
+         Style           =   2
+         Text            =   ""
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+      End
+      Begin MSComCtl2.DTPicker DTPFecha 
+         Height          =   285
+         Left            =   1230
+         TabIndex        =   16
+         Top             =   1305
+         Width           =   1560
+         _ExtentX        =   2752
+         _ExtentY        =   503
+         _Version        =   393216
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Format          =   63569921
+         CurrentDate     =   38056
+      End
+      Begin VB.Label LblObservacion 
+         AutoSize        =   -1  'True
+         Caption         =   "Observación"
+         BeginProperty Font 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   195
+         Left            =   120
+         TabIndex        =   29
+         Top             =   1680
+         Width           =   1050
+      End
+      Begin VB.Label LblFecha 
+         AutoSize        =   -1  'True
+         Caption         =   "Fecha"
+         BeginProperty Font 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   195
+         Left            =   135
+         TabIndex        =   28
+         Top             =   1350
+         Width           =   495
+      End
+      Begin VB.Label LblCodigo 
+         AutoSize        =   -1  'True
+         Caption         =   "Código"
+         BeginProperty Font 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   195
+         Left            =   105
+         TabIndex        =   27
+         Top             =   555
+         Width           =   570
+      End
+      Begin VB.Label LblMotivo 
+         AutoSize        =   -1  'True
+         Caption         =   "Motivo"
+         BeginProperty Font 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   195
+         Left            =   135
+         TabIndex        =   26
+         Top             =   945
+         Width           =   585
+      End
+   End
+   Begin VB.Frame FraFecha 
+      Caption         =   "         Rango de Fechas"
+      BeginProperty Font 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   1215
+      Left            =   90
+      TabIndex        =   22
+      Top             =   1080
+      Width           =   6780
+      Begin VB.OptionButton OptJornadaIncompleta 
+         Caption         =   "Jornada Incompleta"
+         BeginProperty Font 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   330
+         Left            =   4215
+         TabIndex        =   9
+         Top             =   810
+         Width           =   2265
+      End
+      Begin VB.OptionButton OptTardanzas 
+         Caption         =   "Tardanzas"
+         BeginProperty Font 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   300
+         Left            =   2250
+         TabIndex        =   8
+         Top             =   810
+         Width           =   1410
+      End
+      Begin VB.OptionButton OptInasistencia 
+         Caption         =   "Inasistencias"
+         BeginProperty Font 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   300
+         Left            =   165
+         TabIndex        =   7
+         Top             =   780
+         Width           =   1560
+      End
+      Begin VB.CommandButton cmdConsultar 
+         BeginProperty Font 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   450
+         Left            =   5985
+         Picture         =   "FrmMantJustificacion.frx":1C1E
+         Style           =   1  'Graphical
+         TabIndex        =   10
+         ToolTipText     =   "Consultar inasistencias por fecha"
+         Top             =   210
+         Width           =   630
+      End
+      Begin VB.CheckBox ChkFecha 
+         Caption         =   "Rango de Fechas"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   240
+         Left            =   165
+         TabIndex        =   4
+         Top             =   -15
+         Width           =   1830
+      End
+      Begin MSComCtl2.DTPicker DtpFechaFin 
+         Height          =   285
+         Left            =   3885
+         TabIndex        =   6
+         Top             =   315
+         Width           =   1545
+         _ExtentX        =   2725
+         _ExtentY        =   503
+         _Version        =   393216
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Format          =   63569921
+         CurrentDate     =   38056
+      End
+      Begin MSComCtl2.DTPicker DtpFechaInicio 
+         Height          =   285
+         Left            =   1275
+         TabIndex        =   5
+         Top             =   315
+         Width           =   1545
+         _ExtentX        =   2725
+         _ExtentY        =   503
+         _Version        =   393216
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Format          =   63569921
+         CurrentDate     =   38056
+      End
+      Begin VB.Label LblFechaInicio 
+         AutoSize        =   -1  'True
+         Caption         =   "Inicio"
+         BeginProperty Font 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   195
+         Left            =   240
+         TabIndex        =   24
+         Top             =   390
+         Width           =   465
+      End
+      Begin VB.Label LblFechaFin 
+         AutoSize        =   -1  'True
+         Caption         =   "Fin"
+         BeginProperty Font 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   195
+         Left            =   3315
+         TabIndex        =   23
+         Top             =   390
+         Width           =   240
+      End
+   End
+   Begin TrueOleDBGrid70.TDBGrid TDBGFaltas 
+      Height          =   2370
+      Left            =   120
+      TabIndex        =   11
+      Top             =   2400
+      Width           =   6750
+      _ExtentX        =   11906
+      _ExtentY        =   4180
+      _LayoutType     =   4
+      _RowHeight      =   -2147483647
+      _WasPersistedAsPixels=   0
+      Columns(0)._VlistStyle=   0
+      Columns(0)._MaxComboItems=   5
+      Columns(0).Caption=   "Código"
+      Columns(0).DataField=   "IdMarcacion"
+      Columns(0)._PropDict=   "_MaxComboItems,516,2;_VlistStyle,514,3"
+      Columns(1)._VlistStyle=   0
+      Columns(1)._MaxComboItems=   5
+      Columns(1).Caption=   "Fecha"
+      Columns(1).DataField=   "Fecha"
+      Columns(1)._PropDict=   "_MaxComboItems,516,2;_VlistStyle,514,3"
+      Columns(2)._VlistStyle=   0
+      Columns(2)._MaxComboItems=   5
+      Columns(2).Caption=   "Hora Ingreso"
+      Columns(2).DataField=   "HoraIngresoIdeal"
+      Columns(2)._PropDict=   "_MaxComboItems,516,2;_VlistStyle,514,3"
+      Columns(3)._VlistStyle=   0
+      Columns(3)._MaxComboItems=   5
+      Columns(3).Caption=   "Hora Salida"
+      Columns(3).DataField=   "HoraSalidaIdeal"
+      Columns(3)._PropDict=   "_MaxComboItems,516,2;_VlistStyle,514,3"
+      Columns(4)._VlistStyle=   84
+      Columns(4)._MaxComboItems=   5
+      Columns(4).ValueItems(0)._DefaultItem=   0
+      Columns(4).ValueItems(0).Value=   "false"
+      Columns(4).ValueItems(0).Value.vt=   8
+      Columns(4).ValueItems(0).DisplayValue=   "FALSE"
+      Columns(4).ValueItems(0).DisplayValue.vt=   8
+      Columns(4).ValueItems(0)._PropDict=   "_DefaultItem,517,2"
+      Columns(4).ValueItems(1)._DefaultItem=   0
+      Columns(4).ValueItems(1).Value=   "true"
+      Columns(4).ValueItems(1).Value.vt=   8
+      Columns(4).ValueItems(1).DisplayValue=   "TRUE"
+      Columns(4).ValueItems(1).DisplayValue.vt=   8
+      Columns(4).ValueItems(1)._PropDict=   "_DefaultItem,517,2"
+      Columns(4).ValueItems.Count=   2
+      Columns(4).Caption=   "Justificar"
+      Columns(4).DataField=   "Justificar"
+      Columns(4)._PropDict=   "_MaxComboItems,516,2;_VlistStyle,514,3"
+      Columns.Count   =   5
+      Splits(0)._UserFlags=   0
+      Splits(0).ExtendRightColumn=   -1  'True
+      Splits(0).RecordSelectorWidth=   503
+      Splits(0)._SavedRecordSelectors=   0   'False
+      Splits(0).DividerColor=   12632256
+      Splits(0).SpringMode=   0   'False
+      Splits(0)._PropDict=   "_ColumnProps,515,0;_UserFlags,518,3"
+      Splits(0)._ColumnProps(0)=   "Columns.Count=5"
+      Splits(0)._ColumnProps(1)=   "Column(0).Width=1614"
+      Splits(0)._ColumnProps(2)=   "Column(0).DividerColor=0"
+      Splits(0)._ColumnProps(3)=   "Column(0)._WidthInPix=1508"
+      Splits(0)._ColumnProps(4)=   "Column(0).Order=1"
+      Splits(0)._ColumnProps(5)=   "Column(1).Width=2223"
+      Splits(0)._ColumnProps(6)=   "Column(1).DividerColor=0"
+      Splits(0)._ColumnProps(7)=   "Column(1)._WidthInPix=2117"
+      Splits(0)._ColumnProps(8)=   "Column(1).Order=2"
+      Splits(0)._ColumnProps(9)=   "Column(2).Width=2275"
+      Splits(0)._ColumnProps(10)=   "Column(2).DividerColor=0"
+      Splits(0)._ColumnProps(11)=   "Column(2)._WidthInPix=2170"
+      Splits(0)._ColumnProps(12)=   "Column(2).Order=3"
+      Splits(0)._ColumnProps(13)=   "Column(3).Width=2117"
+      Splits(0)._ColumnProps(14)=   "Column(3).DividerColor=0"
+      Splits(0)._ColumnProps(15)=   "Column(3)._WidthInPix=2011"
+      Splits(0)._ColumnProps(16)=   "Column(3).Order=4"
+      Splits(0)._ColumnProps(17)=   "Column(4).Width=2752"
+      Splits(0)._ColumnProps(18)=   "Column(4).DividerColor=0"
+      Splits(0)._ColumnProps(19)=   "Column(4)._WidthInPix=2646"
+      Splits(0)._ColumnProps(20)=   "Column(4).Order=5"
+      Splits.Count    =   1
+      PrintInfos(0)._StateFlags=   0
+      PrintInfos(0).Name=   "piInternal 0"
+      PrintInfos(0).PageHeaderFont=   "Size=8.25,Charset=0,Weight=700,Underline=0,Italic=0,Strikethrough=0,Name=Tahoma"
+      PrintInfos(0).PageFooterFont=   "Size=8.25,Charset=0,Weight=700,Underline=0,Italic=0,Strikethrough=0,Name=Tahoma"
+      PrintInfos(0).PageHeaderHeight=   0
+      PrintInfos(0).PageFooterHeight=   0
+      PrintInfos.Count=   1
+      DefColWidth     =   0
+      HeadLines       =   1
+      FootLines       =   1
+      MultipleLines   =   0
+      CellTipsWidth   =   0
+      DeadAreaBackColor=   12632256
+      RowDividerColor =   12632256
+      RowSubDividerColor=   12632256
+      DirectionAfterEnter=   1
+      MaxRows         =   250000
+      ViewColumnCaptionWidth=   0
+      ViewColumnWidth =   0
+      _PropDict       =   "_ExtentX,2003,3;_ExtentY,2004,3;_LayoutType,512,2;_RowHeight,16,3;_StyleDefs,513,0;_WasPersistedAsPixels,516,2"
+      _StyleDefs(0)   =   "_StyleRoot:id=0,.parent=-1,.alignment=3,.valignment=0,.bgcolor=&H80000005&"
+      _StyleDefs(1)   =   ":id=0,.fgcolor=&H80000008&,.wraptext=0,.locked=0,.transparentBmp=0"
+      _StyleDefs(2)   =   ":id=0,.fgpicPosition=0,.bgpicMode=0,.appearance=0,.borderSize=0,.ellipsis=0"
+      _StyleDefs(3)   =   ":id=0,.borderColor=&H80000005&,.borderType=0,.bold=0,.fontsize=825,.italic=0"
+      _StyleDefs(4)   =   ":id=0,.underline=0,.strikethrough=0,.charset=0"
+      _StyleDefs(5)   =   ":id=0,.fontname=MS Sans Serif"
+      _StyleDefs(6)   =   "Style:id=1,.parent=0,.namedParent=33,.bold=-1,.fontsize=825,.italic=0"
+      _StyleDefs(7)   =   ":id=1,.underline=0,.strikethrough=0,.charset=0"
+      _StyleDefs(8)   =   ":id=1,.fontname=Tahoma"
+      _StyleDefs(9)   =   "CaptionStyle:id=4,.parent=2,.namedParent=37"
+      _StyleDefs(10)  =   "HeadingStyle:id=2,.parent=1,.namedParent=34"
+      _StyleDefs(11)  =   "FooterStyle:id=3,.parent=1,.namedParent=35"
+      _StyleDefs(12)  =   "InactiveStyle:id=5,.parent=2,.bgcolor=&H8000000F&,.fgcolor=&H80000012&"
+      _StyleDefs(13)  =   "SelectedStyle:id=6,.parent=1,.namedParent=36"
+      _StyleDefs(14)  =   "EditorStyle:id=7,.parent=1"
+      _StyleDefs(15)  =   "HighlightRowStyle:id=8,.parent=1,.namedParent=38"
+      _StyleDefs(16)  =   "EvenRowStyle:id=9,.parent=1,.namedParent=39"
+      _StyleDefs(17)  =   "OddRowStyle:id=10,.parent=1,.namedParent=40"
+      _StyleDefs(18)  =   "RecordSelectorStyle:id=11,.parent=2,.namedParent=41"
+      _StyleDefs(19)  =   "FilterBarStyle:id=12,.parent=1,.namedParent=42"
+      _StyleDefs(20)  =   "Splits(0).Style:id=13,.parent=1"
+      _StyleDefs(21)  =   "Splits(0).CaptionStyle:id=22,.parent=4"
+      _StyleDefs(22)  =   "Splits(0).HeadingStyle:id=14,.parent=2"
+      _StyleDefs(23)  =   "Splits(0).FooterStyle:id=15,.parent=3"
+      _StyleDefs(24)  =   "Splits(0).InactiveStyle:id=16,.parent=5"
+      _StyleDefs(25)  =   "Splits(0).SelectedStyle:id=18,.parent=6"
+      _StyleDefs(26)  =   "Splits(0).EditorStyle:id=17,.parent=7"
+      _StyleDefs(27)  =   "Splits(0).HighlightRowStyle:id=19,.parent=8"
+      _StyleDefs(28)  =   "Splits(0).EvenRowStyle:id=20,.parent=9"
+      _StyleDefs(29)  =   "Splits(0).OddRowStyle:id=21,.parent=10"
+      _StyleDefs(30)  =   "Splits(0).RecordSelectorStyle:id=23,.parent=11"
+      _StyleDefs(31)  =   "Splits(0).FilterBarStyle:id=24,.parent=12"
+      _StyleDefs(32)  =   "Splits(0).Columns(0).Style:id=28,.parent=13"
+      _StyleDefs(33)  =   "Splits(0).Columns(0).HeadingStyle:id=25,.parent=14"
+      _StyleDefs(34)  =   "Splits(0).Columns(0).FooterStyle:id=26,.parent=15"
+      _StyleDefs(35)  =   "Splits(0).Columns(0).EditorStyle:id=27,.parent=17"
+      _StyleDefs(36)  =   "Splits(0).Columns(1).Style:id=54,.parent=13"
+      _StyleDefs(37)  =   "Splits(0).Columns(1).HeadingStyle:id=51,.parent=14"
+      _StyleDefs(38)  =   "Splits(0).Columns(1).FooterStyle:id=52,.parent=15"
+      _StyleDefs(39)  =   "Splits(0).Columns(1).EditorStyle:id=53,.parent=17"
+      _StyleDefs(40)  =   "Splits(0).Columns(2).Style:id=58,.parent=13"
+      _StyleDefs(41)  =   "Splits(0).Columns(2).HeadingStyle:id=55,.parent=14"
+      _StyleDefs(42)  =   "Splits(0).Columns(2).FooterStyle:id=56,.parent=15"
+      _StyleDefs(43)  =   "Splits(0).Columns(2).EditorStyle:id=57,.parent=17"
+      _StyleDefs(44)  =   "Splits(0).Columns(3).Style:id=46,.parent=13"
+      _StyleDefs(45)  =   "Splits(0).Columns(3).HeadingStyle:id=43,.parent=14"
+      _StyleDefs(46)  =   "Splits(0).Columns(3).FooterStyle:id=44,.parent=15"
+      _StyleDefs(47)  =   "Splits(0).Columns(3).EditorStyle:id=45,.parent=17"
+      _StyleDefs(48)  =   "Splits(0).Columns(4).Style:id=32,.parent=13"
+      _StyleDefs(49)  =   "Splits(0).Columns(4).HeadingStyle:id=29,.parent=14"
+      _StyleDefs(50)  =   "Splits(0).Columns(4).FooterStyle:id=30,.parent=15"
+      _StyleDefs(51)  =   "Splits(0).Columns(4).EditorStyle:id=31,.parent=17"
+      _StyleDefs(52)  =   "Named:id=33:Normal"
+      _StyleDefs(53)  =   ":id=33,.parent=0"
+      _StyleDefs(54)  =   "Named:id=34:Heading"
+      _StyleDefs(55)  =   ":id=34,.parent=33,.valignment=2,.bgcolor=&H8000000F&,.fgcolor=&H80000012&"
+      _StyleDefs(56)  =   ":id=34,.wraptext=-1"
+      _StyleDefs(57)  =   "Named:id=35:Footing"
+      _StyleDefs(58)  =   ":id=35,.parent=33,.valignment=2,.bgcolor=&H8000000F&,.fgcolor=&H80000012&"
+      _StyleDefs(59)  =   "Named:id=36:Selected"
+      _StyleDefs(60)  =   ":id=36,.parent=33,.bgcolor=&H8000000D&,.fgcolor=&H8000000E&"
+      _StyleDefs(61)  =   "Named:id=37:Caption"
+      _StyleDefs(62)  =   ":id=37,.parent=34,.alignment=2"
+      _StyleDefs(63)  =   "Named:id=38:HighlightRow"
+      _StyleDefs(64)  =   ":id=38,.parent=33,.bgcolor=&H8000000D&,.fgcolor=&H8000000E&"
+      _StyleDefs(65)  =   "Named:id=39:EvenRow"
+      _StyleDefs(66)  =   ":id=39,.parent=33,.bgcolor=&HFFFF00&"
+      _StyleDefs(67)  =   "Named:id=40:OddRow"
+      _StyleDefs(68)  =   ":id=40,.parent=33"
+      _StyleDefs(69)  =   "Named:id=41:RecordSelector"
+      _StyleDefs(70)  =   ":id=41,.parent=34"
+      _StyleDefs(71)  =   "Named:id=42:FilterBar"
+      _StyleDefs(72)  =   ":id=42,.parent=33"
+   End
+   Begin VB.Frame FraTrabajador 
+      Caption         =   "Trabajador"
+      BeginProperty Font 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   1035
+      Left            =   90
+      TabIndex        =   0
+      Top             =   -15
+      Width           =   6765
+      Begin VB.CommandButton CmdBuscarTrabajador 
+         Caption         =   "..."
+         BeginProperty Font 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   240
+         Left            =   6105
+         TabIndex        =   3
+         ToolTipText     =   "Búsqueda de Trabajador"
+         Top             =   240
+         Width           =   465
+      End
+      Begin VB.TextBox TxtApellido 
+         BeginProperty Font 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   285
+         Left            =   1725
+         MaxLength       =   60
+         TabIndex        =   2
+         Tag             =   "-1"
+         Top             =   615
+         Width           =   4920
+      End
+      Begin VB.TextBox TxtIdTrabajador 
+         BeginProperty Font 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   285
+         Left            =   1740
+         TabIndex        =   1
+         Tag             =   "-1"
+         Text            =   "0"
+         Top             =   210
+         Width           =   930
+      End
+      Begin VB.Label LblApellido 
+         AutoSize        =   -1  'True
+         Caption         =   "Apellido y Nombre"
+         BeginProperty Font 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   195
+         Left            =   120
+         TabIndex        =   21
+         Top             =   660
+         Width           =   1530
+      End
+      Begin VB.Label LblIdTrabajador 
+         AutoSize        =   -1  'True
+         Caption         =   "Código"
+         BeginProperty Font 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   195
+         Left            =   105
+         TabIndex        =   20
+         Top             =   270
+         Width           =   570
+      End
+   End
+End
+Attribute VB_Name = "FrmMantJustificacion"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = False
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Explicit
+
+Public intAction As Integer
+Public intIdJustificacion As Long
+Public intIdTrabajador As Integer
+Public intIdMotivoJustificacion As Integer
+Public datFecha As Date
+Public datFechaInicio As Date
+Public datFechaFin As Date
+Public strRemunerada As String
+Public strObservacion As String
+Private ArrayJustificadas() As Variant
+Private intSeleccionados As Integer
+
+Public blnStatus As Boolean
+Public strMensajeError As String
+
+Private mrstDetalle As Object
+Private mrstMotivoJustificacion As Object
+
+Private Const mstrformname As String = "Mantenimiento de Justificaciones"
+
+Public Property Set rstDetalle(ByVal vNewValue As Variant)
+    Set mrstDetalle = vNewValue
+End Property
+Public Property Get rstDetalle() As Variant
+    Set rstDetalle = mrstDetalle
+End Property
+
+Public Property Get rstMotivoJustificacion() As Variant
+    Set rstMotivoJustificacion = mrstMotivoJustificacion
+End Property
+Public Property Set rstMotivoJustificacion(ByVal vNewValue As Variant)
+    Set mrstMotivoJustificacion = vNewValue
+    If Not rstMotivoJustificacion.EOF Then
+        Set Me.DtcMotivoJustificacion.RowSource = rstMotivoJustificacion
+        Me.DtcMotivoJustificacion.ListField = "Descripcion"
+        Me.DtcMotivoJustificacion.BoundColumn = "IdMotivoJustificacion"
+        Me.DtcMotivoJustificacion.Enabled = True
+    Else
+        Me.DtcMotivoJustificacion.Enabled = False
+        Me.DtcMotivoJustificacion.Text = ""
+    End If
+End Property
+
+Public Sub ShowForm()
+On Error GoTo ErrHandler
+    Select Case intAction
+        Case enumActions.Update
+            LoadData
+            SettingControls enumActions.Update, Me
+            Me.Caption = mstrformname & " - " & KEY_ACTION_UPDATE
+        Case enumActions.AddNew
+            LoadData
+            SettingControls enumActions.AddNew, Me
+            Me.Caption = mstrformname & " - " & KEY_ACTION_ADDNEW
+            Me.TxtIdTrabajador.Text = 0
+            Me.TxtApellido.Text = ""
+            Me.DtcMotivoJustificacion.BoundText = 0
+            Me.DTPFecha.Value = Date
+            Me.DtpFechaInicio.Value = Date
+            Me.DtpFechaFin.Value = Date
+            Me.TxtObservacion.Text = ""
+            Me.TxtIdJustificacion.Text = 0
+            Me.OptInasistencia.Value = True
+            Me.OptNoRemunerada.Value = True
+    End Select
+    Me.Show
+    Me.ZOrder 0
+
+Exit Sub
+ErrHandler:
+    Call ErrorMessage(FrmMantJustificacion_ShowForm, Err.Source & " FrmMantJustificacion:ShowForm", Err.Description)
+End Sub
+
+Private Sub CmdAceptar_Click()
+Dim blnResult As Boolean
+
+On Error GoTo ErrHandler
+    If Not ValidateFields Then Exit Sub
+    Select Case intAction
+        Case enumActions.Update
+            blnResult = Update()
+        Case enumActions.AddNew
+            blnResult = AddNew()
+    End Select
+    
+    If Not blnResult Then
+        MsgBox MSG_OPERATION_FAIL & vbCrLf & Me.strMensajeError, vbCritical, mstrformname
+        Me.blnStatus = False
+    Else
+        Unload Me
+        If ActiveForm("FrmConsJustificacion") Then
+            FrmConsJustificacion.LoadData
+        End If
+    End If
+
+Exit Sub
+ErrHandler:
+    Call ErrorMessage(FrmMantJustificacion_ShowForm, Err.Source & " FrmMantJustificacion:ShowForm", Err.Description)
+End Sub
+Private Sub CmdBuscarTrabajador_Click()
+    FrmBusqTrabajador.strModo = Find
+    FrmBusqTrabajador.ShowForm
+
+    If Trim(FrmBusqTrabajador.intIdTrabajador) <> 0 Then
+        Me.TxtIdTrabajador.Text = FrmBusqTrabajador.intIdTrabajador
+        Me.TxtApellido.Text = Trim$(FrmBusqTrabajador.strApellidoNombre)
+    End If
+    Set FrmBusqTrabajador = Nothing
+End Sub
+
+Private Sub CmdCancelar_Click()
+    Unload Me
+End Sub
+
+Private Sub cmdConsultar_Click()
+Dim objPersonal As Object
+Dim rstFaltas As Object
+
+On Error GoTo ErrHandler
+
+    If ValidateFieldsConsultar Then
+        FrmMensajeEspera.ShowForm
+        Set rstDetalle = Nothing
+        Set objPersonal = CreateObject("Personal.clsGeneral")
+        Set rstDetalle = objPersonal.GetCampos("Entero As IdMarcacion, FechaMediana as Fecha, HoraLarga As HoraIngresoIdeal, HoraLarga as HoraSalidaIdeal, Boolean as Justificar")
+                
+        Set objPersonal = CreateObject("Personal.clsMovimientos")
+        If OptInasistencia.Value Then
+            Set rstFaltas = objPersonal.GetFaltas(Me.intIdTrabajador, Me.datFechaInicio, Me.datFechaFin)
+        End If
+        If OptTardanzas.Value Then
+            Set rstFaltas = objPersonal.GetTardanzas(Me.intIdTrabajador, Me.datFechaInicio, Me.datFechaFin)
+        End If
+        If OptJornadaIncompleta.Value Then
+            Set rstFaltas = objPersonal.GetJornadasIncompletas(Me.intIdTrabajador, Me.datFechaInicio, Me.datFechaFin)
+        End If
+        Set objPersonal = Nothing
+        
+        If rstFaltas.RecordCount > 0 Then
+            rstFaltas.MoveFirst
+            Do While Not rstFaltas.EOF
+                rstDetalle.AddNew
+                rstDetalle!IdMarcacion = rstFaltas!IdMarcacion
+                rstDetalle!Fecha = rstFaltas!Fecha
+                rstDetalle!HoraIngresoIdeal = rstFaltas!HoraIngresoIdeal
+                rstDetalle!HoraSalidaIdeal = rstFaltas!HoraSalidaIdeal
+                rstDetalle!Justificar = False
+                rstDetalle.Update
+                rstFaltas.MoveNext
+            Loop
+            Set Me.TDBGFaltas.DataSource = mrstDetalle
+            FrmMensajeEspera.Hide
+        Else
+            If Me.rstMotivoJustificacion.RecordCount > 0 Then
+            Me.TDBGFaltas.MoveFirst
+            Do While Not Me.TDBGFaltas.EOF
+                Me.TDBGFaltas.Delete
+                TDBGFaltas.MoveFirst
+            Loop
+            End If
+            FrmMensajeEspera.Hide
+            MsgBox "No existen incidencias registradas...", vbCritical, mstrformname
+        End If
+    End If
+    
+Exit Sub
+ErrHandler:
+    FrmMensajeEspera.Hide
+    Set objPersonal = Nothing
+    Set rstFaltas = Nothing
+    
+    Call ErrorMessage(FrmMantJustificacion_LoadData, Err.Source & " FrmMantJustificacion:LoadData", Err.Description)
+End Sub
+
+
+Private Sub Form_Load()
+    CenterForm Me
+    Me.strMensajeError = ""
+End Sub
+
+Private Sub LoadData()
+Dim objPersonal As Object
+
+On Error GoTo ErrHandler
+    Set objPersonal = CreateObject("Personal.clsPersonal")
+    Set rstMotivoJustificacion = objPersonal.GetMotivoJustificacion()
+    Set objPersonal = Nothing
+
+    Set objPersonal = CreateObject("Personal.clsGeneral")
+    Set rstDetalle = objPersonal.GetCampos("Entero As IdMarcacion, FechaMediana as Fecha, HoraLarga As HoraIngresoIdeal, HoraLarga as HoraSalidaIdeal, Boolean as Justificar")
+    Set objPersonal = Nothing
+    
+Exit Sub
+ErrHandler:
+    Set objPersonal = Nothing
+
+    Call ErrorMessage(FrmMantJustificacion_LoadData, Err.Source & " FrmMantJustificacion:LoadData", Err.Description)
+End Sub
+
+Private Function AddNew() As Boolean
+Dim objPersonal As Object
+
+On Error GoTo ErrHandler
+    
+    Set objPersonal = CreateObject("Personal.clsMovimientos")
+    AddNew = objPersonal.AddNewJustificacion(Me.datFecha, Me.intIdMotivoJustificacion, Me.strRemunerada, ArrayJustificadas, Me.strObservacion)
+    Set objPersonal = Nothing
+    If AddNew Then
+        Bitacora "Justificacion", KEY_ACTION_ADDNEW
+    End If
+    
+Exit Function
+ErrHandler:
+    Set objPersonal = Nothing
+    AddNew = False
+
+Call ErrorMessage(FrmMantJustificacion_AddNew, Err.Source & " FrmMantJustificacion:AddNew", Err.Description)
+End Function
+Private Function Update() As Boolean
+
+End Function
+
+Public Function ValidateFieldsConsultar() As Boolean
+    ValidateFieldsConsultar = False
+    
+    If Me.TxtIdTrabajador.Text = 0 Then
+        MsgBox "Debe seleccionar un trabajador", vbInformation, mstrformname
+        Exit Function
+    End If
+    
+    If Me.ChkFecha.Value = 1 Then
+        Me.datFechaInicio = Me.DtpFechaInicio.Value
+        Me.datFechaFin = Me.DtpFechaFin.Value
+    Else
+        Me.datFechaInicio = gdatFecha_Nula_RangoInicio
+        Me.datFechaFin = gdatFecha_Nula_RangoFin
+    End If
+    
+    Me.intIdTrabajador = Val(Me.TxtIdTrabajador.Text)
+    ValidateFieldsConsultar = True
+    
+End Function
+
+Public Function ValidateFields() As Boolean
+    ValidateFields = False
+    
+    If Trim$(Me.DtcMotivoJustificacion.Text) = "" Then
+        MsgBox "Debe seleccionar el motivo de justificacion", vbInformation, mstrformname
+        Exit Function
+    End If
+      
+    If Me.rstDetalle.RecordCount <= 0 Then
+        MsgBox "Debe seleccionar marcaciones", vbInformation, mstrformname
+        Exit Function
+    End If
+    intSeleccionados = 0
+    rstDetalle.MoveFirst
+    Do While Not rstDetalle.EOF
+        If rstDetalle!Justificar Then
+            intSeleccionados = intSeleccionados + 1
+        End If
+        rstDetalle.MoveNext
+    Loop
+    If intSeleccionados = 0 Then
+        MsgBox "Debe seleccionar marcaciones para justificar", vbInformation, mstrformname
+        Exit Function
+    Else
+        If Not ValidateConsolidado Then
+            MsgBox "Existe una Fecha Imposible de Justificar, es posible que se haya consolidado", vbInformation, mstrformname
+            Exit Function
+        End If
+        
+        If Not ConfiguraArray Then
+            MsgBox "Debe seleccionar marcaciones para justificar", vbInformation, mstrformname
+            Exit Function
+        End If
+        
+        If Me.OptRemunerada.Value Then
+            Me.strRemunerada = gstrHoraRemunerada
+        Else
+            Me.strRemunerada = gstrHoraNoRemunerada
+        End If
+        Me.intIdTrabajador = Val(Me.TxtIdTrabajador.Text)
+        Me.intIdMotivoJustificacion = Me.DtcMotivoJustificacion.BoundText
+        Me.strObservacion = Replace(Me.TxtObservacion.Text, "'", "''")
+        Me.datFecha = Me.DTPFecha.Value
+        
+        ValidateFields = True
+    End If
+End Function
+
+Public Function ConfiguraArray() As Boolean
+Dim intContador As Integer
+Dim intColumnas As Integer
+Dim intCantidadColumnas As Integer
+
+On Error GoTo ErrHandler
+    
+    intCantidadColumnas = rstDetalle.Fields.Count
+    ReDim ArrayJustificadas(0 To intSeleccionados - 1, 0 To intCantidadColumnas - 1)
+    
+    rstDetalle.MoveFirst
+    Do While Not rstDetalle.EOF
+        If rstDetalle!Justificar Then
+            For intColumnas = 0 To intCantidadColumnas - 1
+                ArrayJustificadas(intContador, intColumnas) = rstDetalle.Fields(intColumnas).Value
+            Next
+            intContador = intContador + 1
+        End If
+        rstDetalle.MoveNext
+    Loop
+    ConfiguraArray = True
+    
+Exit Function
+ErrHandler:
+    ConfiguraArray = False
+
+    Call ErrorMessage(FrmMantJustificacion_ConfiguraArray, Err.Source & " FrmMantJustificacion:ConfiguraArray", Err.Description)
+End Function
+
+Private Sub Form_Unload(Cancel As Integer)
+    Set mrstMotivoJustificacion = Nothing
+    Set mrstDetalle = Nothing
+End Sub
+Private Sub TDBGfaltas_Click()
+If Me.TDBGFaltas.Col = 4 Then
+If Not (Me.rstDetalle.EOF Or Me.rstDetalle.BOF) Then
+    If Me.rstDetalle!Justificar Then
+        Me.rstDetalle!Justificar = False
+    Else
+        Me.rstDetalle!Justificar = True
+    End If
+    rstDetalle.Update
+End If
+End If
+End Sub
+
+Public Function ValidateConsolidado() As Boolean
+Dim objConsolidado As Object
+Dim blnResult As Boolean
+
+On Error GoTo ErrHandler
+    ValidateConsolidado = False
+    Set objConsolidado = CreateObject("Personal.clsMovimientos")
+    Me.rstDetalle.MoveFirst
+    Do While Not Me.rstDetalle.EOF
+        If Me.rstDetalle!Justificar Then
+            blnResult = objConsolidado.GetExisteConsolidado(Me.rstDetalle!Fecha)
+            If blnResult Then
+                Set objConsolidado = Nothing
+                Exit Function
+            End If
+        End If
+    Me.rstDetalle.MoveNext
+    Loop
+    Set objConsolidado = Nothing
+    ValidateConsolidado = True
+
+Exit Function
+ErrHandler:
+    Set objConsolidado = Nothing
+    ValidateConsolidado = False
+    Call ErrorMessage(FrmMantJustificacion_ValidateConsolidado, Err.Source & " FrmMantJustificacion:ValidateConsolidado", Err.Description)
+End Function

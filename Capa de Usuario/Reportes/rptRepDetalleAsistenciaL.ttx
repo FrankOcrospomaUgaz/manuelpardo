@@ -1,0 +1,13 @@
+IdTrabajador	Long		
+Nombres	String	122	
+HorasExtrasDias	Long
+HorasExtrasHoras	Number
+TardanzasDias	Long
+TardanzasHoras	Number
+FaltasJustDias	Long
+FaltasJustHoras	Number
+FaltasInjustDias	Long
+FaltasInjustHoras	Number
+HorasTrabTotal	Number
+HorasDebioTrabTotal	Number
+

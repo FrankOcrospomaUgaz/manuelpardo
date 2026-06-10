@@ -1,0 +1,8 @@
+IdTrabajador	Long		
+Apellidos	String	122
+Fecha	Date
+HoraIngresoIdeal	date
+HoraIngresoReal	date
+HoraSalidaIdeal	date
+HoraSalidaReal	date
+Sobretiempos	Number

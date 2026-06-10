@@ -1,0 +1,11 @@
+IdTrabajador	Long
+Nombres	String	120
+Fecha	Date	
+HoraIngresoIdeal	Date
+HoraSalidaIdeal	Date
+DebioTrabajar	Number
+HoraIngresoReal	Date
+HoraSalidaReal	Date
+Trabajo	Number
+TotalDebioTrabajar	Number
+TotalTrabajo	Number

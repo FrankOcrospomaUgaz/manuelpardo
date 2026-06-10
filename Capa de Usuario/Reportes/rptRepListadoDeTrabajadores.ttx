@@ -1,0 +1,5 @@
+IdTrabajador	Long		
+Apellidos	String	122	
+Dni	String	12	
+Direccion	String	80	
+Cargo	String	30	

@@ -1,0 +1,5 @@
+Línea 15: la clase MSComctlLib.StatusBar del control SbPrincipal no era una clase de control cargada.
+Línea 22: el nombre de la propiedad _ExtentX de SbPrincipal no es válido.
+Línea 23: el nombre de la propiedad _ExtentY de SbPrincipal no es válido.
+Línea 24: el nombre de la propiedad _Version de SbPrincipal no es válido.
+Línea 46: el nombre de la propiedad Panels de SbPrincipal no es válido.

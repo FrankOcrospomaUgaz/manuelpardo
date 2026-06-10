@@ -1,0 +1,9 @@
+IdTrabajador	Long
+Apellidos	String	120
+Fecha	Date	
+HoraIngresoIdeal	Date
+HoraIngresoReal	Date
+HoraSalidaIdeal	Date
+HoraSalidaReal	Date
+IdTipoHora	Long
+TipoHora	String	20

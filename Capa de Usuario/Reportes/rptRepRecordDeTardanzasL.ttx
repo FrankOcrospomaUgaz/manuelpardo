@@ -1,0 +1,5 @@
+IdTrabajador	Long		
+Apellido	String	60
+Nombre	String	60	
+Cantidad	Number
+MinutosTardanza	Number	

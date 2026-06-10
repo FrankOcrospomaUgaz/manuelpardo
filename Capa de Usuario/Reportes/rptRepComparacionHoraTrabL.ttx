@@ -1,0 +1,6 @@
+IdTrabajador	Long		
+Nombres	String	100	
+DebioTrabajar	Number
+Trabajo	Number
+TotalDebioTrabajar	Number
+TotalTrabajo	Number

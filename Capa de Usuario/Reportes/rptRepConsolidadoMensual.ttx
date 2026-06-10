@@ -1,0 +1,26 @@
+IdTrabajador	Long
+Nombres	String	200
+FechaInicio	Date
+FechaFin	Date
+ITR	Number
+MTR	Number
+ITNR	Number
+MTNR	Number
+IIR	Number
+IFI	Number
+MFI	Number
+IS	Number
+MS	Number
+HT	Number
+IJII	Number
+MJII	Number
+IFJNR	Number
+MFJNR	Number
+IJIJR	Number
+MJIJR	Number
+IJIJNR	Number
+MJIJNR	Number
+IFR	Number
+MFR	Number
+IFNR	Number
+MFNR	Number

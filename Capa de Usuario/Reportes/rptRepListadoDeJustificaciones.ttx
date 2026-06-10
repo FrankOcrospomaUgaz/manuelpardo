@@ -1,0 +1,9 @@
+IdTrabajador	Long		
+Apellido	String	60	
+Nombre	String	60	
+Descripcion	String	30	
+Remunerada	String	1	
+MinDeFecha	Date		
+MaxDeFecha	Date		
+CuentaDeFecha	Long
+		

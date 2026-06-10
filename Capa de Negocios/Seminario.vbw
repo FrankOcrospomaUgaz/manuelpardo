@@ -1,0 +1,12 @@
+modConstantes = 94, 44, 644, 488, 
+modManError = 24, 16, 681, 625, 
+modSubMain = 50, 30, 638, 499, Z
+clsPersonal = -84, 184, 598, 795, 
+clsGeneral = 88, 88, 594, 532, C
+clsHorario = -32, 14, 764, 626, 
+clsData = 29, 22, 639, 594, 
+clsReportes = 143, 70, 988, 438, 
+clsMovimientos = 34, 3, 809, 615, 
+clsConsolidado = 61, 50, 679, 664, 
+clsSeguridad = 37, 46, 612, 581, 
+clsCreaBase = 22, 22, 568, 470, 

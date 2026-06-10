@@ -1,0 +1,9 @@
+IdTrabajador	Long		
+Apellido	String	60	
+Nombre	String	60	
+Cargo	String	30
+TipoHora	String	20
+Fecha	Date
+HoraIngreso	Date		
+HoraSalida	Date
+TotalHoras	Number

@@ -1,0 +1,25 @@
+IdTrabajador	Number		
+Apellidos	String	200	
+FID	Number		
+FNRD	Number		
+SPD	Number		
+FIH	Number		
+FNRH	Number		
+SPH	Number		
+FRD	Number
+FRH	Number		
+TARDRD	Number		
+TARDNRD	Number		
+TARDRH	Number		
+TARDNRH	Number		
+HORASTRAB	Number		
+FJNRD	Number
+FJNRH	Number
+JIRD	Number
+JIRH	Number
+JIINJD	Number
+JIINJH	Number
+JIJUSTNRD	Number
+JIJUSTNRH	Number
+FJRD	Number
+FJRH	Number

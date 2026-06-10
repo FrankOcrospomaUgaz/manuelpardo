@@ -1,0 +1,5 @@
+Usuario	String	30	
+Tabla	String	30	
+Operacion	String	20	
+Registro	String	100	
+Fecha	Date		

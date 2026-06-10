@@ -1,0 +1,4 @@
+IdTrabajador	Long		
+Apellido	String	60	
+Nombre	String	60	
+Fecha	Date		

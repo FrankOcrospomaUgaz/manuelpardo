@@ -1,0 +1,25 @@
+IdTrabajador	Long		
+Nombres	String	122	
+Dia	Date		
+IngresoIdeal	Date		
+IngresoReal	Date		
+SalidaIdeal	Date		
+SalidaReal	Date
+Tardanzas	Long
+JornInc	Long
+HorasTrab	Number
+HorasExtrasDias	Long
+HorasExtrasHoras	Number
+SuspensionesDias	Long
+SuspensionesHoras	Number
+TardanzasDias	Long
+TardanzasHoras	Number
+FaltasJustDias	Long
+FaltasJustHoras	Number
+FaltasInjustDias	Long
+FaltasInjustHoras	Number
+JornIncDias	Long
+JornIncHoras	Number
+HorasTrabTotal	Number
+FeriadosRemDias	Long
+FeriadosRemHoras	Number

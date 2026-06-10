@@ -1,0 +1,4 @@
+Línea 443: la clase MSComCtl2.DTPicker del control DtpHoraSalida no era una clase de control cargada.
+Línea 466: la clase MSComCtl2.DTPicker del control DtpHoraIngreso no era una clase de control cargada.
+Línea 627: la clase MSComCtl2.DTPicker del control DtpFechaFin no era una clase de control cargada.
+Línea 648: la clase MSComCtl2.DTPicker del control DtpFechaInicio no era una clase de control cargada.
