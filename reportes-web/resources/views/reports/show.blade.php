@@ -4,7 +4,6 @@
     <div class="page-head">
         <div>
             <h1>{{ $report['title'] }}</h1>
-            <p class="eyebrow">{{ $report['legacy_form'] }} / {{ $report['legacy_report'] }}</p>
         </div>
         @if ($rows !== [])
             <div class="actions">
